@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Feather } from 'react-native-vector-icons';
 import { Entypo, AntDesign } from '@expo/vector-icons'
@@ -35,7 +34,7 @@ export default function Profile() {
                             marginTop: 30,
                             marginBottom: 0
                         }}>
-                        <Image source={require('../images/starico.jpg')} style={style.icons3} />
+                            <Image source={require('../images/starico.jpg')} style={style.icons3} />
                         </View>
                         {/* <View style={{
                             position: 'relative',
