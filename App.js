@@ -1,20 +1,26 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Button, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import HomeScreen from "./Components/HomeScreen";
+import DetailsScreen from "./Components/DetailsScreen";
+import { createStackNavigator } from "@react-navigation/stack";
+import COLORS from "./src/const/color";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Button title="ClickMe!"></Button>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar barStyle="dark-content" backgroundColor={COLORS.white} />
+      <Stack.Navigator
+        screenOptions={{
+          header: () => null,
+        }}
+      >
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
