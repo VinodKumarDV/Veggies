@@ -41,26 +41,23 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
+        width: '100%',
     },
     logos: {
-        width: 300,
+        width: '100%',
         height: 265,
-        marginLeft: 15,
         marginBottom: 5,
         marginTop: 5,
     },
     instructions1: {
         color: '#888',
         fontSize: 18,
-        marginHorizontal: 20,
-        marginLeft: 28,
-        marginBottom: 5,
-        marginTop: 15,
         justifyContent: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: 15
     },
     header: {
-        width: "100%",
+        width: '100%',
         height: 100,
         flexDirection: 'row',
         backgroundColor: '#51d1af',
