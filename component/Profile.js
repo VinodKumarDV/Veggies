@@ -1,56 +1,158 @@
-import React, { Component } from 'react'
-import { ScrollView, Text } from 'react-native'
-import { Button, View } from 'react-native-web'
+import React from 'react';
+import { View, Image, StyleSheet, Text } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Feather } from 'react-native-vector-icons';
+import { Entypo, AntDesign } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-web';
 
-export class profile extends Component {
-    render() {
-        return (
-            <View style={style.container}>
-                <View>
-                    <Text>Your Prediction is Under</Text>
-                    <Text>enter tickets</Text>
-                </View>
-                <ScrollView Vertical showsVerticalScrollIndicator='falsh' style={{width= '100%', height= 50}}>
-                    <Text>1</Text>
-                    <Text>2</Text>
-                    <Text>3</Text>
-                    <Text>4</Text>
-                    <Text>5</Text>
-                    <Text>6</Text>
-                    <Text>7</Text>
-                    <Text>8</Text>
-                    <Text>9</Text>
-                    <Text>10</Text>
-                    <Text>11</Text>
-                    <Text>12</Text>
-                    <Text>13</Text>
-                    <Text>14</Text>
-                    <Text>15</Text>
-                    <Text>16</Text>
-                </ScrollView>
-                <View>
-                    <Text>Yow can win</Text>
-                    <Text>$2000</Text>
-                </View> 
-                <View>
-                    <Text>Total $5</Text>
-                </View>
-                <View>
-                    <Button>Submit my Predections</Button>
-                </View>
+export default function Profile() {
+    return (
+        <View style={style.container}>
+            <View style={style.container1}>
+                <Image source={require('../images/penico.jpg')} style={style.icons} />
+                <Text style={style.title}>Profile</Text>
+                <Feather name="message-square" size={25} style={style.icons1} />
             </View>
-        )
-    }
+            <View style={{ padding: 7, alignItems: 'center' }}>
+                <Image source={{ uri: "https://media.gqindia.com/wp-content/uploads/2018/05/26-866x956.jpg" }} style={style.userImage} />
+                <View style={{ position: 'absolute' }}>
+                    <View style={style.addBtnContainer}>
+                        <Ionicons name="add-outline" style={style.addBtn} />
+                    </View>
+                    <View>
+                        <Text style={style.userName}>Your Story</Text>
+                        <Text style={style.userName}>600 Pts</Text>
+                        <Text style={style.about}>
+                            I'm a software developer that has been in the crypto space since 2012.
+                            And I've seen grow and falter over a period of time.
+                            Really happy to be here!
+                        </Text>
+                        <TouchableOpacity style={style.logico} onPress={() => { console.log("logout"); }}>
+                            <Entypo name="log-out" size={25}> Logout</Entypo>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{
+                        alignItems: 'center',
+                        marginTop: 30,
+                        marginBottom: 0
+                    }}>
+                        <Image source={require('../images/starico.jpg')} style={style.icons3} />
+                    </View>
+                    <View style={style.ratingcont}>
+                        <View style={style.rating}>
+                            <Text style={style.userName}>Under or Over</Text>
+                            <Text style={style.userName}>Top 5</Text>
+                        </View>
+                        <View style={style.rating1}>
+                            <AntDesign name='arrowup' size={35} color='#04b404'> 81%</AntDesign>
+                            <AntDesign name='arrowdown' size={35} color='#DF0101' > -19%</AntDesign>
+                        </View>
+                    </View>
+                </View>
+
+            </View>
+
+        </View>
+
+    );
 }
 
-export default profile
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container: {
-        display: "flex",
-        backgroundColor: "white",
-        alignItems: "center",
-        justifyContent: "center",
-        width: '98%'
+        height: 500,
+        width: '100%',
+        borderColor: "#ffffff",
+    },
+
+    container1: {
+        flexDirection: 'row',
+        width: '100%',
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 15
+    },
+
+    title: {
+        fontWeight: 'bold',
+        fontSize: '25'
+    },
+
+    userImage: {
+        height: 70,
+        width: 70,
+        borderRadius: 50,
+        borderColor: "#ffffff"
+    },
+
+    userName: {
+        textAlign: 'center',
+        fontSize: 12,
+        marginTop: 5,
+        letterSpacing: 2
+    },
+
+    addBtnContainer: {
+        marginTop: 55,
+        backgroundColor: '#4c68d7',
+        marginLeft: '53%',
+        width: 19,
+        height: 19,
+        borderRadius: 50,
+        borderWidth: 1.5,
+        borderColor: '#fff',
+        justifyContent: 'center',
+    },
+
+    addBtn: {
+        alignItems: 'center'
+    },
+
+    icons: {
+        height: 30,
+        width: 30,
+        borderRadius: 50,
+        borderColor: "yellow",
+        borderWidth: 3,
+        marginStart: 10
+    },
+
+    icons1: {
+        marginEnd: 10
+    },
+
+    about: {
+        alignItems: 'center',
+        width: '100%',
+        margin: 10
+    },
+
+    logico: {
+        textAlign: 'center',
+        fontSize: 12,
+        marginTop: 25,
+    },
+
+    icons3: {
+        height: 30,
+        width: 26,
+        marginBottom: 15
+    },
+    ratingcont: {
+        width: '100%',
+        height: 150,
+        borderWidth: 1,
+        borderColor: 'gray'
+    },
+    rating: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginTop: 15
+    },
+    rating1: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 15
     }
 });
