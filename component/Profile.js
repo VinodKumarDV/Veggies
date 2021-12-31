@@ -4,6 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Feather } from 'react-native-vector-icons';
 import { Entypo, AntDesign } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-web';
+import Rating from './Rating'
 
 export default function Profile() {
     return (
@@ -39,14 +40,7 @@ export default function Profile() {
                         <Image source={require('../images/starico.jpg')} style={style.icons3} />
                     </View>
                     <View style={style.ratingcont}>
-                        <View style={style.rating}>
-                            <Text style={style.userName}>Under or Over</Text>
-                            <Text style={style.userName}>Top 5</Text>
-                        </View>
-                        <View style={style.rating1}>
-                            <AntDesign name='arrowup' size={35} color='#04b404'> 81%</AntDesign>
-                            <AntDesign name='arrowdown' size={35} color='#DF0101' > -19%</AntDesign>
-                        </View>
+                        <Rating/>
                     </View>
                 </View>
 
@@ -63,6 +57,7 @@ const style = StyleSheet.create({
         height: 500,
         width: '100%',
         borderColor: "#ffffff",
+        alignItems: 'center'
     },
 
     container1: {
@@ -140,19 +135,10 @@ const style = StyleSheet.create({
         marginBottom: 15
     },
     ratingcont: {
-        width: '100%',
-        height: 150,
+        width: 300,
+        height: 200,
         borderWidth: 1,
-        borderColor: 'gray'
+        borderColor: 'gray',
     },
-    rating: {
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        marginTop: 15
-    },
-    rating1: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginTop: 15
-    }
+    
 });
