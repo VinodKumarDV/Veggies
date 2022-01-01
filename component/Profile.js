@@ -24,9 +24,8 @@ export default function Profile() {
                         <Text style={style.userName}>Your Story</Text>
                         <Text style={style.userName}>600 Pts</Text>
                         <Text style={style.about}>
-                            I'm a software developer that has been in the crypto space since 2012.
-                            And I've seen grow and falter over a period of time.
-                            Really happy to be here!
+                            <Text>Im a part of</Text> <Text style={{ fontWeight: 'bold' }}>Veggies</Text>, We provide all types of <Text style={{ fontWeight: 'bold' }}>Fruits and Vegetables</Text>
+                            directly from the formers. No midele man's, so the we provide all in <Text style={{ fontWeight: 'bold' }}>best Price</Text>.
                         </Text>
                         <TouchableOpacity style={style.logico} onPress={() => { console.log("logout"); }}>
                             <Entypo name="log-out" size={25}> Logout</Entypo>
@@ -120,13 +119,13 @@ const style = StyleSheet.create({
     about: {
         alignItems: 'center',
         width: '100%',
-        margin: 10
+        margin: 20,
+        textAlign: 'center'
     },
 
     logico: {
         textAlign: 'center',
         fontSize: 12,
-        marginTop: 25,
     },
 
     icons3: {
